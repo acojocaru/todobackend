@@ -1,8 +1,8 @@
 FROM acojocaru/todobackend-base:latest
-MAINTER Alexandru Cojocaru <cjcr_alexanddru@gmail.com>
+MAINTAINER Alexandru Cojocaru <cjcr_alexanddru@gmail.com>
 
 RUN apt-get update && \
-    apt-get install -qy python-dev
+    apt-get install -qy python-dev libmysqlclient-dev
 
 RUN . /appenv/bin/activate && \
     pip install wheel --upgrade
@@ -16,7 +16,7 @@ VOLUME /reports
 COPY scripts/test.sh /usr/local/bin/test.sh
 RUN chmod +x /usr/local/bin/test.sh
 
-ENTRYPOINT["test.sh"]
+ENTRYPOINT ["test.sh"]
 CMD ["python", "manage.py", "test", "--noinput"]
 
 COPY src /application
