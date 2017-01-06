@@ -4,7 +4,7 @@ test:
   volumes_from:
     - cache
   links:
-    -db
+    - db
   environment:
     DJANGO_SETTINGS_MODULE: todobackend.settings.test
     MYSQL_HOST: db
