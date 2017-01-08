@@ -11,7 +11,7 @@ app:
     MYSQL_USER: todo
     MYSQL_PASSWORD: password
   command:
-    - uswgi
+    - uwsgi
     - "--socket /var/www/todobackend/todobackend.sock"
     - "--chmod-socket=666"
     - "--module todobackend.wsgi"
