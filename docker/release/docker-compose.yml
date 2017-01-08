@@ -25,7 +25,7 @@ nginx:
   ports:
     - "8000:8000"
   volumes_from:
-    -webroot
+    - webroot
 
 webroot:
   build: ../../
@@ -51,5 +51,5 @@ agent:
   links:
     - db
   environment:
-    - PROBE_HOST: "db"
-    - PROBE_PORT: "3306"
+    PROBE_HOST: "db"
+    PROBE_PORT: "3306"
